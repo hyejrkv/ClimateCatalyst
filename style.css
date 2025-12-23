@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0fdf4;
+    overflow: hidden; 
+}
+
+.container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+.page {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    scroll-snap-align: start;
+    padding: 20px;
+}
+
+/* --- Section 1: Hero --- */
+.section-hero {
+    background: linear-gradient(135deg, #f0f4f8 0%, #dcfce7 100%);
+    position: relative;
+}
+
+.big-text {
+    font-size: clamp(3rem, 10vw, 5rem);
+    font-weight: 800;
+    color: #1a1a1a;
+    line-height: 1;
+}
+
+.gradient-text {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 800;
+    background: linear-gradient(to right, #15803d, #86efac);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.small-impact {
+    font-size: 1.2rem;
+    color: #4b5563;
+}
+
+.scroll-hint {
+    position: absolute;
+    bottom: 40px;
+    color: #9ca3af;
+    animation: bounce 2s infinite;
+}
+
+/* --- Section 2: Cards --- */
+.section-cards {
+    background-color: #f0fdf4; /* Warna hijau pucat sesuai gambar */
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    color: #c2410c; /* Warna orange/coklat di teks 'Hidden Cost' */
+}
+
+.subtitle {
+    color: #4b5563;
+    margin-bottom: 50px;
+}
+
+.card-container {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px; /* Tambahkan jarak dari subtitle */
+    min-height: 200px; /* Beri tinggi minimum untuk memastikan area ada */
+}
+
+.card {
+    background: white;
+    opacity: 0; /* Mulai dari transparan tanpa !important */
+    transform: translateY(50px); /* Mulai dari posisi agak bawah */
+    padding: 40px 25px;
+    border-radius: 24px;
+    width: 340px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.icon-red { color: #ef4444; }
+.icon-orange { color: #f97316; }
+.icon-green { color: #22c55e; }
+
+.card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    color: #111827;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .card { width: 100%; }
+}
+
+/* --- Section 3: Stats --- */
+.section-stats {
+    background-color: #fefce8; /* Warna krem kuning sesuai gambar */
+}
+
+.stats-wrapper {
+    width: 90%;
+    max-width: 900px;
+    text-align: left;
+}
+
+.stats-title {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    line-height: 1.2;
+}
+
+.green-bold {
+    color: #2d6a4f;
+    font-weight: 800;
+}
+
+.stats-subtitle {
+    margin-bottom: 40px;
+    font-weight: 600;
+    color: #444;
+}
+
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.chart-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.label {
+    width: 180px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.label i {
+    width: 18px;
+    height: 18px;
+}
+
+.bar-wrapper {
+    flex-grow: 1;
+    background: #f3f4f6; /* Warna track background bar */
+    border-radius: 8px;
+    height: 35px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bar {
+    height: 100%;
+    width: 0%; /* Dimulai dari 0 untuk animasi JS */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 15px;
+    color: #444;
+    font-size: 0.85rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* Warna Batang Spesifik */
+.bar-1 { background-color: #d97706; color: #451a03; } /* Orange/Brown */
+.bar-2 { background-color: #3b82f6; } /* Blue */
+.bar-3 { background-color: #ec4899; } /* Pink */
+.bar-4 { background-color: #eab308; } /* Yellow/Gold */
+.bar-5 { background-color: #86efac; } /* Light Green */
+.bar-6 { background-color: #fbbf24; border-right: 2px solid orange; }
+.bar-7 { background-color: #e5e7eb; }
+
+.footer-note {
+    margin-top: 50px;
+    text-align: center;
+    font-style: italic;
+    color: #666;
+}
+
+/* Update pada bagian Bar */
+.bar {
+    height: 100%;
+    width: 0%; 
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    position: relative; /* Penting untuk posisi absolut teks */
+    transition: background-color 0.3s;
+}
+
+/* Default: Teks berada di dalam bar (sebelah kanan) */
+.bar span {
+    position: absolute;
+    right: 15px; 
+    font-size: 0.85rem;
+    font-weight: 700;
+    white-space: nowrap;
+    color: inherit; /* Mengikuti warna teks bar */
+    pointer-events: none;
+}
+
+/* Jika bar terlalu kecil, kelas ini akan ditambahkan via JS */
+.bar.label-outside span {
+    right: auto;
+    left: calc(100% + 10px); /* Geser ke kanan luar bar */
+    color: #444 !important;  /* Warna teks gelap agar terbaca di background krem */
+}
+
+/* Pastikan wrapper tidak memotong teks yang keluar */
+.bar-wrapper {
+    flex-grow: 1;
+    background: rgba(0,0,0,0.05);
+    border-radius: 8px;
+    height: 35px;
+    position: relative;
+    overflow: visible; /* Diubah dari hidden ke visible */
+}
