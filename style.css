@@ -55,10 +55,11 @@ body {
 .highlight { color: #c2410c; }
 .subtitle { color: #4b5563; margin-bottom: 40px; }
 .card-container { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; width: 100%; }
-.card { background: white; opacity: 0; transform: translateY(50px); padding: 40px 25px; border-radius: 24px; width: 340px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: box-shadow 0.3s ease, transform 0.3s ease; }
+.card { background: white;
+    opacity: 0; transform: translateY(50px); padding: 40px 25px; border-radius: 24px; width: 340px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: box-shadow 0.3s ease, transform 0.3s ease; }
 .card:hover { transform: translateY(40px); /* Sedikit naik dari posisi y:50 */ box-shadow: 0 20px 40px rgba(0,0,0,0.06); }
 .icon { width: 50px; height: 50px; margin-bottom: 20px; }
-.icon-red { color: #ef4444; } .icon-orange { color: #f97316; } .icon-green { color: #22c55e; }
+.icon-red { color: #ef4444; } .icon-orange { color: #f05959; } .icon-green { color: #22c55e; }
 .card h3 { font-size: 1.25rem; margin-bottom: 15px; color: #111827; }
 .card p { font-size: 0.95rem; color: #6b7280; line-height: 1.6; }
 
@@ -191,7 +192,7 @@ body {
 
 /* --- Section 7: Final --- */
 .section-final {
-    background: linear-gradient(180deg, #A5B1D8 0%, #D5FFD8 100%); /* Gradient ungu ke teal */
+    background: linear-gradient(180deg, #FFFFFF 0%, #D5FFD8 100%); /* Gradient ungu ke teal */
     position: relative;
 }
 
@@ -217,4 +218,43 @@ body {
 @media (max-width: 768px) {
     .imagine-grid { grid-template-columns: 1fr; }
     .final-text { font-size: 2rem; }
+}
+
+/* --- Section 8: Trends --- */
+.section-trends {
+    background-color: #ffffff;
+}
+
+.trends-wrapper {
+    width: 90%;
+    max-width: 1000px;
+}
+
+.chart-container-large {
+    width: 100%;
+    height: 450px;
+    background: #fdfdfd;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    margin: 30px 0;
+}
+
+.data-insight {
+    background: #eff6ff;
+    padding: 15px 20px;
+    border-radius: 12px;
+    color: #1e40af;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-left: 5px solid #3b82f6;
+}
+
+.data-insight i { width: 20px; }
+
+@media (max-width: 768px) {
+    .chart-container-large { height: 350px; padding: 10px; }
+    .trends-title { font-size: 1.8rem; }
 }

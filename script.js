@@ -129,3 +129,83 @@ window.addEventListener("load", () => {
     // Refresh ScrollTrigger setelah semua setup selesai
     ScrollTrigger.refresh();
 });
+
+// --- Inisialisasi Chart.js untuk Page 8 ---
+const ctxProjection = document.getElementById('projectionChart').getContext('2d');
+
+const projectionChart = new Chart(ctxProjection, {
+    type: 'line',
+    data: {
+        labels: ['2025', '2030', '2035', '2040', '2045', '2050'],
+        datasets: [
+            {
+                label: 'Physical Activity',
+                data: [1609.18, 4085.08, 4940.14, 5649.21, 6203.15, 6605.74],
+                borderColor: '#10b981', // Hijau
+                backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                fill: true,
+                tension: 0.3,
+                borderWidth: 3
+            },
+            {
+                label: 'Air Quality',
+                data: [172.41, 577.17, 1521.34, 2494.13, 3090.07, 3082.33],
+                borderColor: '#3b82f6', // Biru
+                backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                fill: true,
+                tension: 0.3,
+                borderWidth: 3
+            },
+            {
+                label: 'Congestion (Cost Impact)',
+                data: [345.25, 1199.03, 484.32, -602.85, -1416.33, -2311.23],
+                borderColor: '#f59e0b', // Orange
+                backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                fill: true,
+                tension: 0.3,
+                borderWidth: 3,
+                borderDash: [5, 5] // Garis putus-putus untuk membedakan
+            }
+        ]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                position: 'bottom',
+                labels: { usePointStyle: true, padding: 20 }
+            },
+            tooltip: {
+                backgroundColor: '#1e293b',
+                padding: 12,
+                titleFont: { size: 14 },
+                callbacks: {
+                    label: (context) => ` £${context.raw.toLocaleString()}M`
+                }
+            }
+        },
+        scales: {
+            y: {
+                grid: { color: '#f1f5f9' },
+                title: { display: true, text: 'Value in £ Million' }
+            },
+            x: {
+                grid: { display: false }
+            }
+        }
+    }
+});
+
+// Tambahkan animasi GSAP agar chart muncul halus saat scroll
+gsap.from(".chart-container-large", {
+    scrollTrigger: {
+        trigger: ".section-trends",
+        start: "top 70%",
+        scroller: ".container"
+    },
+    opacity: 0,
+    y: 50,
+    duration: 1.2,
+    ease: "power2.out"
+});
