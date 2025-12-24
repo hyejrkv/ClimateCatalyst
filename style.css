@@ -258,3 +258,174 @@ body {
     .chart-container-large { height: 350px; padding: 10px; }
     .trends-title { font-size: 1.8rem; }
 }
+
+/* --- Section 9: Total Summary --- */
+.section-total {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.total-title {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    color: #1a1a1a;
+}
+
+/* Big Summary Card */
+.big-summary-card {
+    background: white;
+    padding: 50px;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+    text-align: center;
+    margin-bottom: 40px;
+    border: 1px solid #e2e8f0;
+    opacity: 0; /* Untuk animasi */
+    transform: scale(0.9);
+}
+
+.summary-label {
+    font-size: 1.2rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.summary-value {
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 800;
+    color: #0f172a;
+    margin: 10px 0;
+}
+
+.summary-subtext {
+    color: #10b981;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Small Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.small-stat-card {
+    background: white;
+    padding: 20px;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+    opacity: 0; /* Untuk animasi */
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.small-stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.small-stat-card i {
+    width: 30px;
+    height: 30px;
+    color: #3b82f6;
+}
+
+.stat-info h4 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #1e293b;
+}
+
+.stat-info p {
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+@media (max-width: 768px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .big-summary-card { padding: 30px; }
+}
+
+/* --- Section 10: Climate Actions --- */
+.section-actions {
+    background-color: #f0fdfa; /* Teal sangat muda */
+}
+
+.action-title { font-size: 3rem; margin-bottom: 10px; color: #1a1a1a; }
+.teal-bold { color: #0d9488; font-weight: 800; }
+.action-subtitle { color: #4b5563; margin-bottom: 50px; }
+
+.action-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.action-card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid #f1f5f9;
+    opacity: 0; /* Untuk animasi GSAP */
+    transform: translateY(30px);
+}
+
+.action-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px rgba(13, 148, 136, 0.1);
+    border-color: #99f6e4;
+}
+
+.action-icon {
+    width: 60px;
+    height: 60px;
+    background: #f0fdfa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: #0d9488;
+    transition: all 0.3s ease;
+}
+
+.action-card:hover .action-icon {
+    background: #0d9488;
+    color: white;
+    transform: rotate(10deg);
+}
+
+.action-card h3 {
+    font-size: 1.2rem;
+    color: #111827;
+    margin-bottom: 12px;
+}
+
+.action-card p {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 1024px) {
+    .action-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+    .action-grid { grid-template-columns: 1fr; }
+}

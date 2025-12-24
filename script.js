@@ -209,3 +209,42 @@ gsap.from(".chart-container-large", {
     duration: 1.2,
     ease: "power2.out"
 });
+
+// --- Animasi Page 9 (Total Summary) ---
+const totalTl = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".section-total",
+        start: "top 60%",
+        scroller: ".container",
+        toggleActions: "play none none reverse"
+    }
+});
+
+totalTl.to(".big-summary-card", {
+    opacity: 1,
+    scale: 1,
+    duration: 1,
+    ease: "back.out(1.7)"
+})
+.to(".small-stat-card", {
+    opacity: 1,
+    y: 0,
+    stagger: 0.15,
+    duration: 0.8,
+    ease: "power2.out"
+}, "-=0.5");
+
+// --- Animasi Page 10 (Climate Actions) ---
+gsap.to(".action-card", {
+    scrollTrigger: {
+        trigger: ".section-actions",
+        start: "top 65%",
+        scroller: ".container",
+        toggleActions: "play none none reverse"
+    },
+    opacity: 1,
+    y: 0,
+    stagger: 0.15,
+    duration: 1,
+    ease: "power3.out"
+});
